@@ -72,4 +72,4 @@ This section provides a step-by-step guide on how to replicate our research find
 ## Citation
 Please cite our work if it contributes to your research:
 
--Chen, Zhiyong, et al. "Enhancing Open-Set Speaker Identification through Rapid Tuning with Speaker Reciprocal Points and Negative Sample." arXiv preprint arXiv:2409.15742 (2024).
+Chen, Zhiyong, et al. "Enhancing Open-Set Speaker Identification through Rapid Tuning with Speaker Reciprocal Points and Negative Sample." arXiv preprint arXiv:2409.15742 (2024).
