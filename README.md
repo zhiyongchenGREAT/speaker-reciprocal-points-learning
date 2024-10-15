@@ -1,4 +1,4 @@
-# Enhancing Open-Set Speaker Identification through Rapid Tuning with Speaker Reciprocal Points and Negative Samples
+# Enhancing Open-Set Speaker Identification through Rapid Tuning with Speaker Reciprocal Points and Negative Sample.(IEEE SLT24)
 
 ## Overview
 We introduces a novel framework for open-set speaker identification in household environments, playing a crucial role in facilitating seamless human-computer interactions. Addressing the limitations of current speaker models and classification approaches, our work integrates an AudioLM frontend with a few-shot rapid tuning neural network (NN) backend for enrollment, employing task-optimized Speaker Reciprocal Points Learning (SRPL) to enhance discrimination across multiple target speakers. Furthermore, we propose an enhanced version of SRPL (SRPL+), which incorporates negative sample learning with both speech-synthesized and real negative samples to significantly improve open-set SID accuracy. Our approach is thoroughly evaluated across various multi-language datasets, demonstrating its effectiveness in achieving high usability for complex household multi-speaker scenarios and significantly enhancing open-set performance.
@@ -57,8 +57,6 @@ We provide the implementation of core evaluation metrics, along with other evalu
 ## Code
 Code used in this research for model training, and evaluation, is available for public use after publication. This encourages reproducibility and further experimentation in the field.
 
-**Please note**: The models, saved checkpoints, and evaluation code for reproducing results are now available. However, the training code for SRPL+ will be **released after the publication** of our research paper.
-
 [SRPL+ code repository](https://github.com/srplplus/srplplus.github.io)
 
 ## Visualization and Evaluations
@@ -74,10 +72,4 @@ This section provides a step-by-step guide on how to replicate our research find
 ## Citation
 Please cite our work if it contributes to your research:
 
-@article{srplplus2024,
-title={Enhancing Open-Set Speaker Identification through Rapid Tuning with Speaker Reciprocal Points and Negative Samples},
-author={Anonymous Authors},
-journal={Anonymous Journal},
-year={2024},
-publisher={Anonymous Publisher}
-}
+-Chen, Zhiyong, et al. "Enhancing Open-Set Speaker Identification through Rapid Tuning with Speaker Reciprocal Points and Negative Sample." arXiv preprint arXiv:2409.15742 (2024).
