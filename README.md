@@ -6,9 +6,9 @@ Speaker recognition systems face significant challenges due to intrinsic speaker
 <p align="center">
   <img src="images/srpl_arch.png" alt="SRPL+ Architecture" width="50%" />
 </p>
-<p align="center">
+<!-- <p align="center">
   <img src="images/srpl.png" alt="SRPL+ Process" width="50%" />
-</p>
+</p> -->
 
 ## Dataset
 We utilize two primary datasets in our research:
@@ -21,18 +21,18 @@ We utilize two primary datasets in our research:
 
 [Link to HiMia dataset](https://aishelltech.com/wakeup_data)
 
-**Example split for training and testing**:
+**Split for training and testing**:
 
 [Example split](https://github.com/srplplus/srplplus.github.io/tree/main/QSpeech_wavLMTDNN_embs/emb_test)
 
 ## Pretrained Audio Large Model
-Our methodology is built upon a pretrained audio large model WavLM-base-plus for TDNN speaker verification, specifically designed to capture the nuances of human speech and speaker characteristics. This model serves as the foundation for our rapid tuning process, allowing for effective speaker identification. We use the 512 dimensional WavLM-base-plus with TDNN extracted speaker embedding for our backend rapid tuning and enrollment (SRPL+) models.
+Our methodology is built upon a pretrained audio large model WavLM-base-plus for
 
 [Link and Details to the pretrained WavLM-TDNN AudioLM](https://huggingface.co/microsoft/wavlm-base-plus-sv)
 
-<p align="center">
+<!-- <p align="center">
   <img src="images/wavlm.png" alt="SRPL+ Architecture" width="50%" />
-</p>
+</p> -->
 
 ## Evaluations
 The evaluation section details the performance metrics on open-set speaker identification. The Open Set Classification Rate (OSCR) calculates the area under the curve mapping the Correct Classification Rate (CCR) for known classes to the False Positive Rate (FPR) for unknown data, offering a threshold-independent evaluation for open-set.
@@ -51,10 +51,10 @@ Code used in this research for model training, and evaluation, is available for 
 
 [SRPL+ code repository](https://github.com/srplplus/srplplus.github.io)
 
-## Visualization and Evaluations
-We present a series of visualizations and detailed evaluations to illustrate our method's effectiveness as in the paper. The t-sne embedding plots clearly demostrate the effectiveness of our method.
+<!-- ## Visualization and Evaluations
+We present a series of visualizations and detailed evaluations to illustrate our method's effectiveness as in the paper. The t-sne embedding plots clearly demostrate the effectiveness of our method. -->
 
-![emb plot](images/emb_srpl.png)
+<!-- ![emb plot](images/emb_srpl.png) -->
 
 <!-- [Link to visualizations and detailed evaluations]() -->
 
@@ -64,4 +64,11 @@ This section provides a step-by-step guide on how to replicate our research find
 ## Citation
 Please cite our work if it contributes to your research:
 
-Chen, Zhiyong, et al. "Enhancing Open-Set Speaker Identification through Rapid Tuning with Speaker Reciprocal Points and Negative Sample." arXiv preprint arXiv:2409.15742 (2024).
+@inproceedings{chen2024enhancing,
+  title={Enhancing Open-Set Speaker Identification Through Rapid Tuning With Speaker Reciprocal Points and Negative Sample},
+  author={Chen, Zhiyong and Ai, Zhiqi and Li, Xinnuo and Xu, Shugong},
+  booktitle={2024 IEEE Spoken Language Technology Workshop (SLT)},
+  pages={1144--1149},
+  year={2024},
+  organization={IEEE}
+}
