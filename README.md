@@ -17,17 +17,9 @@ We utilize two primary datasets in our research:
 
 [Link to Qualcomm Speech dataset](https://developer.qualcomm.com/project/keyword-speech-dataset)
 
-| Target Speakers | Unknown Speakers | N-fold |
-|----------|----------|----------|
-| 5/10 | 10 | 3 |
-
 **FFSVC HiMia**: Dataset links and our experimental settings.
 
 [Link to HiMia dataset](https://aishelltech.com/wakeup_data)
-
-| Target Speakers | Unknown Speakers | N-fold |
-|----------|----------|----------|
-| 5/10 | 10 | 3 |
 
 **Example split for training and testing**:
 
