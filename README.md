@@ -25,10 +25,10 @@ We utilize two primary datasets in our research:
 
 [Example split](https://github.com/srplplus/srplplus.github.io/tree/main/QSpeech_wavLMTDNN_embs/emb_test)
 
-## Pretrained Audio Large Model
-Our methodology is built upon a pretrained audio large model WavLM-base-plus for
+## Pretrained Audio Foundation Models
+Our method is built upon a pretrained audio foundation model EResNetV2 and WavLM-base-plus.
 
-[Link and Details to the pretrained WavLM-TDNN AudioLM](https://huggingface.co/microsoft/wavlm-base-plus-sv)
+[Link and Details to the pretrained WavLM-TDNN](https://huggingface.co/microsoft/wavlm-base-plus-sv)
 
 <!-- <p align="center">
   <img src="images/wavlm.png" alt="SRPL+ Architecture" width="50%" />
