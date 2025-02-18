@@ -1,69 +1,62 @@
-# Efficient Open-Set Speaker Identification through Few-shot Tuning with Speaker Reciprocal Points and Unknown Samples\
+# Efficient Open-Set Speaker Identification through Few-shot Tuning with Speaker Reciprocal Points and Unknown Samples
 
 ## Overview
+
 Speaker recognition systems face significant challenges due to intrinsic speaker variability, such as aging and emotional fluctuations, which can undermine accuracy. Traditional solutions often rely on large-scale pretraining or repeated enrollments, which are impractical for real-world applications. In this paper, we propose a novel framework to address these challenges by leveraging speaker-specific zero-shot text-to-speech (TTS) systems. Our approach generates synthetic speech that captures age-related and emotional variations in voice, followed by few-shot open-set fine-tuning on limited real enrollment data. We demonstrate that this strategy effectively enhances robustness to intrinsic variability, requiring minimal enrollment samples. Our method is evaluated on multiple challenging datasets, showing its strong generalization ability for long-term, time-varying, and emotionally rich speaker recognition tasks.
 
 <p align="center">
-  <img src="images/srpl_arch.png" alt="SRPL+ Architecture" width="50%" />
+  <img src="images/sid_arch_new.png" alt="SRPL+ Process" width="50%" />
 </p>
-<!-- <p align="center">
-  <img src="images/srpl.png" alt="SRPL+ Process" width="50%" />
-</p> -->
 
 ## Dataset
-We utilize two primary datasets in our research:
 
-**Qualcomm Speech**: Dataset links and our experimental settings.
+We utilize 6 primary datasets in our research, which are shared on the Hugging Face repository.
 
-[Link to Qualcomm Speech dataset](https://developer.qualcomm.com/project/keyword-speech-dataset)
+- **[Training and testing split](https://huggingface.co/datasets/zhiyongchen/speakerRPL_dataset/tree/main)** ![Hugging Face](https://img.shields.io/badge/Hugging_Face-000000?style=flat&logo=HuggingFace)
 
-**FFSVC HiMia**: Dataset links and our experimental settings.
 
-[Link to HiMia dataset](https://aishelltech.com/wakeup_data)
+## Speech Foundation Models
 
-**Split for training and testing**:
+Our method is built upon two pretrained audio foundation models:
 
-[Example split](https://github.com/srplplus/srplplus.github.io/tree/main/QSpeech_wavLMTDNN_embs/emb_test)
-
-## Pretrained Audio Foundation Models
-Our method is built upon a pretrained audio foundation model EResNetV2 and WavLM-base-plus.
-
-[Link and Details to the pretrained WavLM-TDNN](https://huggingface.co/microsoft/wavlm-base-plus-sv)
-
-<!-- <p align="center">
-  <img src="images/wavlm.png" alt="SRPL+ Architecture" width="50%" />
-</p> -->
+- [**EResNetV2**](https://github.com/modelscope/3D-Speaker)
+- [**WavLM-base-plus**](https://huggingface.co/microsoft/wavlm-base-plus-sv)
 
 ## Evaluations
-The evaluation section details the performance metrics on open-set speaker identification. The Open Set Classification Rate (OSCR) calculates the area under the curve mapping the Correct Classification Rate (CCR) for known classes to the False Positive Rate (FPR) for unknown data, offering a threshold-independent evaluation for open-set.
 
-<!-- $CCR(TH) = \frac{|\{x \in TestData^{k} \mid \arg\max_{k} P(k|x) = k \cap P(k|x) \geq TH\}|}{|TestData^{k}|}$
+The evaluation section details the performance metrics on open-set speaker identification. The **Open Set Classification Rate (OSCR)** calculates the area under the curve mapping the Correct Classification Rate (CCR) for known classes to the False Positive Rate (FPR) for unknown data, offering a threshold-independent evaluation for open-set.
 
-$FPR(TH) = \frac{|\{x \mid x \in Unknown \cap \max_k P(k|x) \geq TH\}|}{|Unknown|}$ -->
 ![emb plot](images/eq.png)
 
-We provide the implementation of core evaluation metrics, along with other evaluation metrics, in our code repository. An inference script is also provided to evaluate the model on our example testing split data.
+You can access the core evaluation metrics and inference script for evaluation in our code repository.
 
-[Inference script and evaluation metrics implementation](https://github.com/srplplus/srplplus.github.io/blob/main/inference_demo.ipynb)
+- **[Inference script and evaluation metrics implementation](https://github.com/zhiyongchenGREAT/speaker-reciprocal-points-learning)**
+
+Run the script as follows:
+```bash
+python osr_spk_cn_{dataset}.py
+```
+or with unknown synthetic enhancement samples
+```bash
+python osr_spk_cn_{dataset}.py --cs_my
+```
 
 ## Code
-Code used in this research for model training, and evaluation, is available for public use after publication. This encourages reproducibility and further experimentation in the field.
+The code used in this research for model training and evaluation is available in the repository:
+- **[Inference script and evaluation metrics implementation](https://github.com/zhiyongchenGREAT/speaker-reciprocal-points-learning)**
+  
+We also provided the fine-tuned models.
+- **[ckpt](https://huggingface.co/datasets/zhiyongchen/speakerRPL_dataset/tree/main)**![Hugging Face](https://img.shields.io/badge/Hugging_Face-000000?style=flat&logo=HuggingFace)
 
-[SRPL+ code repository](https://github.com/srplplus/srplplus.github.io)
-
-<!-- ## Visualization and Evaluations
-We present a series of visualizations and detailed evaluations to illustrate our method's effectiveness as in the paper. The t-sne embedding plots clearly demostrate the effectiveness of our method. -->
-
-<!-- ![emb plot](images/emb_srpl.png) -->
-
-<!-- [Link to visualizations and detailed evaluations]() -->
-
-<!-- ## How to Use
-This section provides a step-by-step guide on how to replicate our research findings, including setting up the environment, preprocessing the data, training the model, and conducting evaluations. -->
-
+Direct inference for experiment with:
+```bash
+eval_for_cosine_eres2net.ipynb
+```
 ## Citation
-Please cite our work if it contributes to your research:
 
+If this work contributes to your research, please consider citing our paper:
+
+```bibtex
 @inproceedings{chen2024enhancing,
   title={Enhancing Open-Set Speaker Identification Through Rapid Tuning With Speaker Reciprocal Points and Negative Sample},
   author={Chen, Zhiyong and Ai, Zhiqi and Li, Xinnuo and Xu, Shugong},
@@ -72,3 +65,10 @@ Please cite our work if it contributes to your research:
   year={2024},
   organization={IEEE}
 }
+```
+Feel free to copy and use this as well!
+## Correspondence
+
+For any inquiries, please contact:
+- zhiyongchen@shu.edu.cn
+- zhiyongchen2021@gmail.com
