@@ -71,4 +71,5 @@ Feel free to copy and use this as well!
 
 For any inquiries, please contact:
 - zhiyongchen@shu.edu.cn
+- shuhangwu@shu.edu.cn
 - zhiyongchen2021@gmail.com
