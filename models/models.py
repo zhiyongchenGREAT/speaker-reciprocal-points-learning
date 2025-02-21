@@ -5,7 +5,6 @@ from models.ABN import MultiBatchNorm
 from torch.nn import TransformerEncoder, TransformerEncoderLayer
 
 class ConvNet(nn.Module):
-    """LeNet++ as described in the Center Loss paper."""
     def __init__(self, num_classes):
         super(ConvNet, self).__init__()
         self.conv1_1 = nn.Conv2d(3, 32, 5, stride=1, padding=2)
@@ -187,10 +186,6 @@ class classifier_spk(nn.Module):
         # self.bn2 = nn.BatchNorm1d(256)
         # self.relu2 = nn.ReLU()
         self.fc2 = nn.Linear(256, num_classes, bias=False)
-
-        # mat_enrolled = load_and_average_embeddings('/nvme/zhiyong/avsp/vox1_t_train_emb')
-        # self.fc2.weight = nn.Parameter(mat_enrolled)
-        # print(self.fc2.weight.shape, mat_enrolled.shape)
 
     def forward(self, x, return_feature=False):
         # Flatten the input
